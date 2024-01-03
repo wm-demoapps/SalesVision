@@ -1,0 +1,307 @@
+.wm-app .app-livelist>nav.app-datanavigator {
+    width: 25pt !important;
+}
+
+.wm-app .div-ellipsis tr td div {
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.wm-app .list-card.only-cards {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.wm-app .list-card.only-cards .panel-footer {
+    background-color: transparent;
+    border-top: none;
+    box-shadow: none;
+}
+
+.wm-app .profile-text {
+    font-size: 18px;
+    background-color: rgb(247, 234, 227);
+    color: rgb(213, 155, 148);
+    margin-bottom: 0px;
+    padding: 0.27em;
+    text-align: center;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    border: 1px solid rgb(213, 155, 148);
+}
+
+.wm-app .inline-grid {
+    display: inline-grid;
+}
+
+.wm-app .p-0 {
+    padding: 0;
+}
+
+.wm-app .m-0 {
+    margin: 0;
+}
+
+.wm-app .container-box {
+    border-radius: 6px;
+    border: solid 1px rgba(46, 91, 255, 0.08);
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px 0 hsla(205, 100%, 32%, 11%);
+    overflow: hidden;
+}
+
+.wm-app .app-grid.panel.p-0 .app-datagrid .table-container {
+    padding: 0;
+}
+
+.wm-app .progess-ledgers {
+    border-radius: 0 0 6px 6px;
+}
+
+.wm-app .no-shadow {
+    box-shadow: none !important;
+}
+
+.wm-app .app-calendar .fc-body .fc-row {
+    height: auto !important;
+}
+
+.wm-app .app-calendar .fc-day-grid-container {
+    height: auto !important;
+}
+
+.wm-app .app-calendar .fc .fc-event {
+    position: absolute;
+    top: 0.5em;
+    width: 0;
+    height: 0;
+    padding: 0.25em;
+    border: 0;
+    background-color: #005fa3;
+    margin-left: 2.25em;
+    border-radius: 50%;
+}
+
+.char-icon {
+    background-color: rgb(247, 234, 227);
+    color: rgb(213, 155, 148);
+    margin-bottom: 0px;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.wm-app .list-accordian .list-group .list-group-item {
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px rgba(158, 165, 189, 0.3);
+    margin: 0.25em 0 0.75em;
+    border: none;
+    padding: 0.5em;
+    color: #05080E;
+}
+
+.wm-app .list-accordian .list-group .list-group-item:before {
+    content: "\f107";
+    font-family: "FontAwesome";
+    font-size: 1.35em;
+    position: absolute;
+    top: 0.4em;
+    left: 0.6em;
+    transition: all 0.5s;
+}
+
+.wm-app .list-accordian .list-group .list-group-item .media-body,
+.wm-app .list-accordian .list-group .list-group-item .expand-content {
+    padding-left: 2em;
+}
+
+.wm-app .list-accordian .list-group .list-group-item .expand-content {
+    display: none;
+}
+
+.wm-app .list-accordian .list-group .list-group-item.active {
+    background-color: #fff;
+    color: #05080E;
+}
+
+.wm-app .list-accordian .list-group .list-group-item.active:before {
+    transform: rotateX(180deg);
+}
+
+.wm-app .list-accordian .list-group .list-group-item.active .expand-content {
+    display: block;
+}
+
+.wm-app .badges-list .list-group .list-group-item {
+    padding: 0;
+    border-bottom: none;
+}
+
+.wm-app .app-container.profile-img {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 0.5em;
+    box-shadow: 0 0 10px 2px #e6e6e6;
+}
+
+.wm-app .app-container.profile-img img {
+    z-index: 1;
+}
+
+.wm-app .app-container.profile-img:before {
+    content: "";
+    background-image: linear-gradient(to top, #e4e3e3 53%, #ffffff);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+}
+
+.wm-app .app-container.profile-img:after {
+    content: "";
+    background-image: linear-gradient(to bottom, #e4e3e3 53%, #ffffff);
+    width: 94%;
+    height: 94%;
+    position: absolute;
+    left: 3%;
+    top: 3%;
+    border-radius: 50%;
+}
+
+.app-progress.circle.progress circle-progress>svg circle:last-of-type {
+    stroke: #CAF263;
+    stroke-width: 24px;
+    opacity: 50%;
+}
+
+.app-progress.circle.progress.progress-circle-success svg path:last-of-type {
+    stroke: #004852;
+    stroke-width: 32px;
+    stroke-linecap: square;
+}
+
+.app-progress.circle.progress circle-progress>svg path:first-of-type {
+    stroke-linecap: square;
+    stroke: #004852;
+    stroke-width: 32px;
+}
+
+.wm-app .fc-theme-standard td,
+.wm-app .fc-theme-standard th {
+    border: none;
+}
+
+.wm-app .app-calendar table {
+    border: none;
+}
+
+.wm-app .fc .fc-daygrid-day-number {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.wm-app .fc .fc-daygrid-day-number:hover {
+    cursor: pointer;
+}
+
+.wm-app .fc .fc-daygrid-day-number {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wm-app .fc .fc-daygrid-day-top,
+.wm-app .fc .fc-daygrid-day-frame {
+    height: 100%;
+}
+
+.wm-app .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    min-height: auto;
+}
+
+.wm-app .fc .fc-daygrid-day {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .wm-app .app-header+.app-content {
+        height: calc(100% - 71px);
+    }
+}
+
+
+/* width */
+
+.wm-app::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+
+/* Track */
+
+.wm-app::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+
+/* Handle */
+
+.wm-app::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+
+/* Handle on hover */
+
+.wm-app::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* width */
+
+.wm-app *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+
+/* Track */
+
+.wm-app *::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+
+/* Handle */
+
+.wm-app *::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+
+/* Handle on hover */
+
+.wm-app *::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.wm-app .img-rounded {
+    border-radius: 8px;
+}

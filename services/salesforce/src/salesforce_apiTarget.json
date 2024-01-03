@@ -1,0 +1,136 @@
+{
+  "basePath" : "${rest.salesforce.basepath}",
+  "paths" : {
+    "/oauth2/token" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "salesforce_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "body",
+          "name" : "RequestBody",
+          "description" : "RequestBody",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "formData",
+          "name" : "username",
+          "format" : "string",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "formData",
+          "name" : "password",
+          "format" : "string",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "formData",
+          "name" : "client_secret",
+          "format" : "string",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "formData",
+          "name" : "client_id",
+          "format" : "string",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "formData",
+          "name" : "grant_type",
+          "format" : "string",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "multipart/form-data" ]
+      },
+      "x-WM-BASE_PATH" : "/oauth2/token",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.salesforce.scheme}://${rest.salesforce.host}${rest.salesforce.basepath}/oauth2/token"
+    }
+  },
+  "host" : "${rest.salesforce.host}",
+  "schemes" : [ "${rest.salesforce.scheme}" ],
+  "definitions" : {
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "salesforce.RootRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "salesforce.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "access_token", "id", "instance_url", "issued_at", "signature", "token_type" ],
+      "properties" : {
+        "access_token" : {
+          "type" : "string"
+        },
+        "signature" : {
+          "type" : "string"
+        },
+        "instance_url" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "token_type" : {
+          "type" : "string"
+        },
+        "issued_at" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "9f316e51-36a2-46c5-a9c3-0469a0555623",
+    "x-WM-SERVICE_ID" : "salesforce",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

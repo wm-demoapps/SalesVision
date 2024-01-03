@@ -1,0 +1,172 @@
+<wm-page name="myprofile" pagetitle="My Profile">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-content name="content">
+        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="mainContent">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow7" padding="8px 16px">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                        <wm-container name="container1" class="container-box">
+                            <wm-layoutgrid name="layoutgrid5">
+                                <wm-gridrow name="gridrow10" padding="10px">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn18">
+                                        <wm-layoutgrid name="layoutgrid10">
+                                            <wm-gridrow name="gridrow19_1">
+                                                <wm-gridcolumn columnwidth="5" name="gridcolumn32_1" horizontalalign="center">
+                                                    <wm-container name="container9_1" class="profile-img">
+                                                        <wm-picture name="repsPicture" shape="rounded" picturesource="bind:Variables.LoggedInUserREPS.dataSet[$i].picurl" width="110px" height="110px"></wm-picture>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="7" name="gridcolumn33_1" padding="unset unset unset 1em">
+                                                    <wm-label name="repsName" caption="bind:Variables.LoggedInUserREPS.dataSet[$i].name" class="text-ellipsis app-label  f3 font-semibold text-black" margin="2em unset unset unset"></wm-label>
+                                                    <wm-label name="repsRole" caption="bind:Variables.LoggedInUserREPS.dataSet[$i].channels.name" class="app-label text-ellipsis text-primary h4 font-regular" margin="0px unset unset unset"></wm-label>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn16">
+                                        <wm-container name="container9" margin="1.5em unset unset -0.75em" bordercolor="rgba(158, 165, 189, 0.3)" borderstyle="solid" borderwidth="0px 2px" padding="0.5em 1em unset 2em">
+                                            <wm-layoutgrid name="layoutgrid7_1">
+                                                <wm-gridrow name="gridrow14_1">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn25_1">
+                                                        <wm-label caption="Phone" name="phoneLable" class="app-label font-Medium f2"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="9" name="gridcolumn26_1">
+                                                        <wm-label padding="unset 0.5em unset unset" name="phoneValue" caption="bind:&quot;: &quot; + Variables.LoggedInUserREPS.dataSet[$i].phone" class="text-ellipsis app-label  f2 font-regular" show="true"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow15">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn27">
+                                                        <wm-label name="emailLable" caption="Email" class="app-label font-Medium f2"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="9" name="gridcolumn28">
+                                                        <wm-label padding="unset 0.5em unset unset" name="emailValue" caption="bind:&quot;: &quot; + Variables.LoggedInUserREPS.dataSet[$i].email" class="text-ellipsis app-label font-regular f2"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow16_1">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn29_1">
+                                                        <wm-label name="locationLable" caption="Location" class="app-label font-Medium f2"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="9" name="gridcolumn30">
+                                                        <wm-label padding="unset 0.5em unset unset" name="locationValue" caption="bind:&quot;: &quot; +Variables.LoggedInUserREPS.dataSet[$i].states.name" class="text-ellipsis app-label  font-regular f2"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn14">
+                                        <wm-container name="container10" margin="1.5em unset unset -0.75em" padding="0.5em unset unset 2em">
+                                            <wm-layoutgrid name="layoutgrid8">
+                                                <wm-gridrow name="gridrow17">
+                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn31">
+                                                        <wm-label name="officeAddressLable" caption="Office Address" class="app-label f2 font-medium"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="8" name="gridcolumn25_2">
+                                                        <wm-label padding="unset 0.5em unset unset" name="officeAddressValue" caption="bind:&quot;: &quot; + Variables.LoggedInUserREPS.dataSet[$i].officeAddress" class="inline app-label f2 font-regular"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn5" padding="10px 10px 10px 16px">
+                        <wm-container name="container2" class="chart-filter">
+                            <wm-panel iconclass="" autoclose="outsideClick" title="Goals" name="panel_goals">
+                                <wm-progress-circle width="200px" height="235px" name="progress_circle_goals" type="success" subtitle="Achieved" title="" captionplacement="inside" class="center-block" datavalue="bind:(Variables.QVGetSalesSum.dataSet.salesSum*100)/(Variables.weeklySalesTarget.dataSet.dataValue*4*Variables.QVGetSalesSum.dataSet.repCount)"></wm-progress-circle>
+                                <wm-container name="container4" horizontalalign="center" class="progess-ledgers" display="flex" padding="1em">
+                                    <wm-container name="container29" display="inline-flex" class="app-container flex-inline" horizontalalign="left">
+                                        <wm-icon name="salesTargetIcon" iconclass="wi wi-lens" color="#E4F8B0" class="pull-left"></wm-icon>
+                                        <wm-container name="container11" padding="unset unset unset 10px">
+                                            <wm-label name="salesTargetLable" caption="Sales Target" whitespace="nowrap" class="p app-label f1 font-semibold text-black"></wm-label>
+                                            <wm-label caption="bind:((Variables.loggedInUser.dataSet.roles[0]=='manager') ? (Variables.weeklySalesTarget.dataSet.dataValue*4*Variables.QVGetSalesSum.dataSet.repCount) : Variables.weeklySalesTarget.dataSet.dataValue*4) | toCurrency: '$'" textalign="right"
+                                                name="salesTargetValue"></wm-label>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-container name="container30_1" display="inline-flex" class="app-container flex-inline" horizontalalign="left">
+                                        <wm-icon iconclass="wi wi-lens" name="targetAchivedicon" class="pull-left text-success"></wm-icon>
+                                        <wm-container name="container12" padding="unset unset unset 10px">
+                                            <wm-label caption="Target Achieved" name="targetAchivedLable" class="p app-label f1 font-semibold text-black"></wm-label>
+                                            <wm-label name="targetAchivedValue" class="p" caption="bind:Variables.QVGetSalesSum.dataSet.salesSum | toCurrency: '$'" textalign="left"></wm-label>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-panel>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn6" padding="10px 16px 10px 10px">
+                        <wm-container name="container3">
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow name="gridrow5">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn9" padding="unset 10px unset unset">
+                                        <wm-tile width="100%" name="monthlyCommissionTile">
+                                            <wm-layoutgrid height="100%" name="layoutgrid10_1">
+                                                <wm-gridrow height="100%" name="gridrow14_2" class="app-grid-row clearfix ">
+                                                    <wm-gridcolumn columnwidth="8" horizontalalign="left" name="gridcolumn26_2">
+                                                        <wm-label name="monthlyCommissionLable" caption="Monthly Commission" class="h3 app-label font-semibold"></wm-label>
+                                                        <wm-label name="monthlyCommissionValue" caption="$10K" class="p app-label h1 "></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="4" horizontalalign="center" name="gridcolumn25_3">
+                                                        <wm-progress-circle width="100%" height="100px" name="progress_circle_monthly_bonus" subtitle="Achieved" type="default" datavalue="bind:(Variables.QVGetSalesSum.dataSet.salesSum*100)/(Variables.weeklySalesTarget.dataSet.dataValue*4*Variables.QVGetSalesSum.dataSet.repCount)"
+                                                            margin="unset unset 0px unset"></wm-progress-circle>
+                                                        <wm-label padding="unset 0.5em" name="reaminingDaysLable" caption="8 days to go" fontsize="10" margin="unset unset 0px unset" class="app-label "></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-tile>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn10" padding="unset unset unset 10px">
+                                        <wm-tile width="100%" name="tile2" backgroundcolor="#fff">
+                                            <wm-layoutgrid height="100%" name="layoutgrid11">
+                                                <wm-gridrow height="100%" name="gridrow15_1">
+                                                    <wm-gridcolumn columnwidth="8" horizontalalign="left" name="gridcolumn28_1">
+                                                        <wm-label caption="Quarterly Bonus" name="quatelyBonusLable" class="h3 app-label font-semibold"></wm-label>
+                                                        <wm-label name="quaterlyBonusValue" caption="$50K" class="p app-label h1"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="4" horizontalalign="center" name="gridcolumn27_1">
+                                                        <wm-progress-circle width="100%" height="100px" name="progress_circle_quaterly_bonus" subtitle="Achieved" datavalue="bind:(Variables.GetQVQuarterlySum.dataSet.salesSum*100)/(Variables.weeklySalesTarget.dataSet.dataValue*4*Variables.GetQVQuarterlySum.dataSet.repCount)"
+                                                            margin="unset unset 0px unset"></wm-progress-circle>
+                                                        <wm-label padding="unset 0.5em" name="remainingDays" caption="8 days to go" fontsize="10" margin="unset unset 0px unset"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-tile>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow16">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn29" padding="10px unset">
+                                        <wm-container name="container7_1" class="container-box" padding="unset unset 10px unset">
+                                            <wm-list listclass="list-group" itemsperrow="xs-1 sm-1 md-2 lg-3" template="true" class="list-card no-shadow badges-list" name="BadgesList" dataset="bind:Variables.SalesVisionBadgesData.dataSet" navigation="Inline" title="My Badges" disableitem="true"
+                                                itemclass="list-group-item">
+                                                <wm-listtemplate layout="media" name="listtemplate1">
+                                                    <wm-card name="BadgeDetailsCard" class="no-shadow">
+                                                        <wm-card-content horizontalalign="center" name="card_content" class="app-card-content card-body card-block text-black">
+                                                            <wm-layoutgrid name="layoutgrid9">
+                                                                <wm-gridrow name="gridrow18_1">
+                                                                    <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn31_1">
+                                                                        <wm-picture name="badgePicture" picturesource="bind:Variables.SalesVisionBadgesData.dataSet[$i].badgeicon" height="90px"></wm-picture>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                            </wm-layoutgrid>
+                                                            <wm-label name="badgeName" class="p app-label" caption="bind:Variables.SalesVisionBadgesData.dataSet[$i].badgename" textalign="center"></wm-label>
+                                                            <wm-label name="badgeRecievedDate" class="p app-label" caption="bind:Variables.SalesVisionBadgesData.dataSet[$i].receivedDate" textalign="center"></wm-label>
+                                                        </wm-card-content>
+                                                    </wm-card>
+                                                </wm-listtemplate>
+                                            </wm-list>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+</wm-page>

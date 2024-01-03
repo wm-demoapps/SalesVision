@@ -1,0 +1,28 @@
+<wm-partial name="partial1">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow1" padding="1em unset">
+            <wm-gridcolumn columnwidth="2" name="gridcolumn7" horizontalalign="center">
+                <wm-icon name="icon1" iconclass="bind:iconForQuoteStatus(pageParams.dealStage)"></wm-icon>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="5" name="gridcolumn1" padding="unset unset unset 1em">
+                <wm-label padding="unset 0.5em" name="label2" caption="Deal Stage" fontweight="bold"></wm-label>
+                <wm-label padding="unset 0.5em" name="label3" caption="bind:pageParams.dealStage"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="5" name="gridcolumn2">
+                <wm-label padding="unset 0.5em" name="label3_1" caption="Deal Size" fontweight="bold"></wm-label>
+                <wm-label padding="unset 0.5em" name="label4" caption="bind:pageParams.dealSize"></wm-label>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow2" padding="unset unset 1em unset">
+            <wm-gridcolumn columnwidth="2" name="gridcolumn9"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="5" name="gridcolumn3">
+                <wm-label padding="unset 0.5em" name="label5" caption="Expected Close Date" fontweight="bold"></wm-label>
+                <wm-label padding="unset 0.5em" name="label6" caption="bind:pageParams.expectedDate"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="5" name="gridcolumn4">
+                <wm-label padding="unset 0.5em" name="label7" caption="Product Name" fontweight="bold"></wm-label>
+                <wm-label padding="unset 0.5em" name="label8" caption="bind:pageParams.productName"></wm-label>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

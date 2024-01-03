@@ -1,0 +1,7 @@
+{
+  "id" : "EmailService",
+  "type" : "JavaService",
+  "packageNames" : [ "com.salesvision.emailservice" ],
+  "serviceClassNames" : [ "com.salesvision.emailservice.EmailService" ],
+  "title" : "EmailService"
+}

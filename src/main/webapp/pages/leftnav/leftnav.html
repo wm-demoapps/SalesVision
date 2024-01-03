@@ -1,0 +1,19 @@
+<wm-partial name="leftnav" type="leftnav">
+    <wm-nav name="leftnavigation" type="pills" layout="stacked">
+        <wm-nav-item name="list_dashboard">
+            <wm-anchor caption="Dashboard" name="dashboardLink" iconclass="sv-home" on-click="Actions.goToPage_Dashboard.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="saleRepSales_pipeline" accessroles="Everyone">
+            <wm-anchor caption="Sales Pipeline" name="salesRepSalePipeline" iconclass="sv-receipt-tax" on-click="Actions.goToPage_SalesPipeline.invoke()" show="true" accessroles="Everyone"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="customerNavItem" accessroles="Everyone">
+            <wm-anchor name="customerLink" iconclass="sv-employee" caption="Customers" on-click="Actions.goToPage_ExistingCustomers.invoke()" show="true"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="myTeamNavItem" show="true" accessroles="Regional Sales Head,manager">
+            <wm-anchor caption="My Team" iconclass="sv-user" on-click="Actions.goToPage_MyTeam.invoke()" name="myTeamLink" show="true"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="logoutNavItem" class="app-nav-item" show="false">
+            <wm-anchor name="logoutLink" iconclass="sv-logout" caption="Logout" on-click="Actions.logoutAction.invoke()" class="app-anchor "></wm-anchor>
+        </wm-nav-item>
+    </wm-nav>
+</wm-partial>

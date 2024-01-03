@@ -1,0 +1,77 @@
+[ {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Dashboard",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ExistingCustomers",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MyProfile",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MyTeam",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ProspectDetail",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "dealStage",
+    "type" : "string"
+  }, {
+    "name" : "dealSize",
+    "type" : "integer"
+  }, {
+    "name" : "expectedDate",
+    "type" : "string"
+  }, {
+    "name" : "productName",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "SalesPipeline",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TestPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "popover_UserProfile",
+  "type" : "POPOVER",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+} ]

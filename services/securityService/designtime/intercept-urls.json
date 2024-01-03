@@ -1,0 +1,16 @@
+[ {
+  "urlPattern" : "/pages/Login/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/MyTeam/**",
+  "permission" : "Role",
+  "roles" : [ "manager" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/SalesVision/Customers",
+  "permission" : "Role",
+  "roles" : [ "manager" ],
+  "httpMethod" : "POST"
+} ]

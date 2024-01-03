@@ -1,0 +1,146 @@
+{
+  "basePath" : "${rest.getLeadsData.basepath}",
+  "paths" : {
+    "/data/v39.0/query/" : {
+      "x-WM-BASE_PATH" : "/data/v39.0/query/",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "getLeadsData_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "header",
+          "name" : "Content-Type",
+          "format" : "string",
+          "description" : "Content-Type",
+          "type" : "string",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "header",
+          "name" : "Authorization",
+          "format" : "string",
+          "description" : "Authorization",
+          "type" : "string",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "q",
+          "format" : "string",
+          "description" : "q",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.getLeadsData.scheme}://${rest.getLeadsData.host}${rest.getLeadsData.basepath}/data/v39.0/query/"
+    }
+  },
+  "host" : "${rest.getLeadsData.host}",
+  "schemes" : [ "${rest.getLeadsData.scheme}" ],
+  "definitions" : {
+    "recordsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getLeadsData.recordsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "City", "Company", "Email", "Name", "Phone", "State", "attributes" ],
+      "properties" : {
+        "Company" : {
+          "type" : "string"
+        },
+        "Email" : {
+          "type" : "string"
+        },
+        "Phone" : {
+          "type" : "string"
+        },
+        "State" : {
+          "type" : "string"
+        },
+        "attributes" : {
+          "$ref" : "#/definitions/attributes"
+        },
+        "City" : {
+          "type" : "string"
+        },
+        "Name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "attributes" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getLeadsData.attributes",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "type", "url" ],
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getLeadsData.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "done", "records", "totalSize" ],
+      "properties" : {
+        "totalSize" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "records" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/recordsEntryItem"
+          }
+        },
+        "done" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "b767674f-6372-417b-8c62-67e54434373d",
+    "x-WM-SERVICE_ID" : "salesforce2",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

@@ -1,0 +1,63 @@
+{
+  "endpointAddress" : "https://ap16.salesforce.com/services/oauth2/token",
+  "method" : "POST",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "username:sowmya.vootukuri@wavemaker.com&\npassword:salesforce1PZOViGiUsNE75YWZkzYd6xMRu&\nclient_secret:E829FBA5784C5591E1105A75ABCB2CD1624B60B443150FB98D3650D37E96AC44&\nclient_id:3MVG9n_HvETGhr3D3gNFyPk0_DyOexJx0TYjZxuPpJrOql2YS3ReaYYtboe34HhKqkfm8hhoEqmNhqlwLF8s4&\ngrant_type:password",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "multipart/form-data",
+  "multiParamInfoList" : [ {
+    "type" : "STRING",
+    "name" : "username",
+    "list" : false,
+    "testValue" : "sowmya.vootukuri@wavemaker.com",
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "password",
+    "list" : false,
+    "testValue" : "salesforce1PZOViGiUsNE75YWZkzYd6xMRu",
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "client_secret",
+    "list" : false,
+    "testValue" : "E829FBA5784C5591E1105A75ABCB2CD1624B60B443150FB98D3650D37E96AC44",
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "client_id",
+    "list" : false,
+    "testValue" : "3MVG9n_HvETGhr3D3gNFyPk0_DyOexJx0TYjZxuPpJrOql2YS3ReaYYtboe34HhKqkfm8hhoEqmNhqlwLF8s4",
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "grant_type",
+    "list" : false,
+    "testValue" : "password",
+    "contentType" : null
+  } ],
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Expect-CT" : [ "max-age=86400, report-uri=\"https://a.forcesslreports.com/Expect-CT-report/nullm\"" ],
+      "Set-Cookie" : [ "BrowserId=jFwVSE5LEeqr2QHCBm8gTQ;Path=/;Domain=.salesforce.com;Expires=Mon, 13-Apr-2020 10:28:17 GMT;Max-Age=5184000" ],
+      "Public-Key-Pins-Report-Only" : [ "pin-sha256=\"9n0izTnSRF+W4W4JTq51avSXkWhQB8duS2bxVLfzXsY=\"; pin-sha256=\"5kJvNEMw0KjrCAu7eXY5HZdvyCS13BbA0VJG1RSP91w=\"; pin-sha256=\"njN4rRG+22dNXAi+yb8e3UMypgzPUPHlv4+foULwl1g=\"; max-age=86400; includeSubDomains; report-uri=\"https://a.forcesslreports.com/hpkp-report/nullm\";" ],
+      "X-ReadOnlyMode" : [ "false" ],
+      "Referrer-Policy" : [ "origin-when-cross-origin" ],
+      "Expires" : [ "Thu, 01 Jan 1970 00:00:00 GMT" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Date" : [ "Thu, 13 Feb 2020 10:28:17 GMT" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "X-Robots-Tag" : [ "none" ],
+      "Strict-Transport-Security" : [ "max-age=31536000; includeSubDomains" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Cache-Control" : [ "no-cache,must-revalidate,max-age=0,no-store,private" ],
+      "Vary" : [ "Accept-Encoding" ]
+    },
+    "responseBody" : "{\"access_token\":\"00D2w000002jeS1!ARMAQNG4_lbpq4qzlVFC.oPjxaClysnR5VewZVgvk.6EJ.mfXp_OSwtawGAJj8G2w3am.Dw2aASNJIWqIWikAOUqILL_tDM2\",\"instance_url\":\"https://ap16.salesforce.com\",\"id\":\"https://login.salesforce.com/id/00D2w000002jeS1EAI/0052w000001ccc7AAA\",\"token_type\":\"Bearer\",\"issued_at\":\"1581589697345\",\"signature\":\"/NrCHlsjkpAUjB1xtjhj1vnZjAfHAp+VCFtaHkiWc8M=\"}",
+    "convertedResponse" : null
+  }
+}

@@ -1,0 +1,66 @@
+<wm-page name="mainpage" pagetitle="Main">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-content name="content">
+        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="mainContent">
+            <wm-layoutgrid name="layoutgrid2">
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="7" name="gridcolumn8">
+                        <wm-label padding="unset" name="Customerslabel" caption="Existing Customers" class="app-label h1"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn9"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow7_1">
+                    <wm-gridcolumn columnwidth="7" name="gridcolumn11_1" padding="10px 10px 10px 16px">
+                        <wm-table name="customersTable" title="" dataset="bind:Variables.GetExistingCustomers.dataSet" navigation="Basic" filtermode="search" showrecordcount="true" gridclass="table-border" statehandler="none" height="654px" navigationalign="right">
+                            <wm-table-column binding="quotes.customers.name" caption="Customers" widget-type="undefined" edit-widget-type="text" show="true" type="string" readonly="false"></wm-table-column>
+                            <wm-table-column binding="quotes.customers.company" caption="Company Name" edit-widget-type="text" show="true" type="string" readonly="false"></wm-table-column>
+                            <wm-table-column binding="isRenewal" caption="Is Renewal" widget-type="checkbox" width="90px" primary-key="false" edit-widget-type="checkbox" show="true" type="boolean" generator="assigned" accessroles="user"
+                                readonly="false">
+                                <wm-checkbox datavalue="bind:row.getProperty('isRenewal')" disabled="bind:colDef.readonly" class="" conditionalclass="" conditionalstyle=""></wm-checkbox>
+                            </wm-table-column>
+                            <wm-table-column binding="quotes.estimatedSale" caption="Deal Size" width="100px" primary-key="false" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="true" formatpattern="toCurrency" currencypattern="USD"></wm-table-column>
+                            <wm-table-column binding="entryDate" caption="Sale Date" width="110px" primary-key="false" edit-widget-type="date" show="true" type="date" generator="assigned" datepattern="yyyy, MMM dd" formatpattern="toDate"
+                                accessroles="user" readonly="false"></wm-table-column>
+                            <wm-table-column binding="quotes.reps.picurl" caption="Rep" widget-type="image" width="48px" edit-widget-type="text" searchable="false" show="true" type="string" accessroles="manager" readonly="false">
+                                <wm-picture picturesource="bind:row.getProperty('quotes.reps.picurl')" hint="bind:row.getProperty('quotes.reps.picurl')" class="" conditionalclass="" conditionalstyle="" shape="circle"></wm-picture>
+                            </wm-table-column>
+                            <wm-table-column binding="quotes.reps.name" caption="Name" widget-type="label" width="20%" edit-widget-type="text" searchable="false" show="true" type="string" accessroles="manager" readonly="false">
+                                <wm-label caption="bind:row.getProperty('quotes.reps.name')" class="" conditionalclass="" condtionalstyle=""></wm-label>
+                            </wm-table-column>
+                        </wm-table>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn12" padding="10px 16px 10px 10px">
+                        <wm-livefilter name="PolicyFilter" title="Upcoming Policy Renewals" dataset="bind:Variables.CustomerSales.dataSet" captionalign="left" captionposition="left" captionwidth="xs-12 sm-3 md-3 lg-3" pagesize="8" autoupdate="true" expanded="true" collapsible="false"
+                            on-beforeservicecall="PolicyFilterBeforeservicecall($data)" on-error="PolicyFilterError($data)" margin="unset unset 20px unset">
+                            <wm-layoutgrid columns="1" name="layoutgrid2_1">
+                                <wm-gridrow name="gridrow2">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                                        <wm-filter-field name="products" field="products" displayname="Products" widget="select" lookup-type="Products" lookup-field="name" is-related="true" related-entity-name="Products" is-range="false" type="string" is-primary-key="false" generator="assigned"
+                                            show="true" key="products" placeholder="Select value" matchmode="startignorecase" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"></wm-filter-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow3" padding="unset unset 1.5em unset">
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn5">
+                                        <wm-label padding="unset 1em" name="salesLable" caption="Sales"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn4">
+                                        <wm-prefab prefabname="NoUIRangeSlider" name="NoUIRangeSlider1" start="1000" end="20000" max="20000" step="2500" pipdensity="3" on-handlechange="Widgets.PolicyFilter.filter()" values="200" pipmode="steps"></wm-prefab>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-filter-action key="filter" display-name="Filter" show="false" class="btn-primary" iconclass="wi wi-filter-list" title="Filter" action="filter()" shortcutkey="" disabled="false" widget-type="button" type="button"></wm-filter-action>
+                        </wm-livefilter>
+                        <wm-table statehandler="none" name="Table1" title="" dataset="bind:Widgets.PolicyFilter.result" navigation="Scroll" height="472px">
+                            <wm-table-column binding="quotes.customers.name" caption="Customer Name" edit-widget-type="text" show="true" type="string" readonly="false"></wm-table-column>
+                            <wm-table-column binding="products.name" caption="Products Name" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                            <wm-table-column binding="sales" caption="Sales" edit-widget-type="number" show="true" type="integer" generator="assigned" formatpattern="toCurrency" currencypattern="USD" readonly="false"></wm-table-column>
+                            <wm-table-column binding="renewalPeriod" caption="Renewal Period" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="false"></wm-table-column>
+                        </wm-table>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+</wm-page>

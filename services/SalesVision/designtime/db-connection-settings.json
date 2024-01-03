@@ -1,0 +1,75 @@
+{
+  "username" : "root",
+  "password" : "wm@123",
+  "url" : "jdbc:mariadb://11.111.11.111:88030003/SalesVision?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true",
+  "driverClass" : "org.mariadb.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "SalesVision",
+  "packageName" : "com.salesvision.salesvision",
+  "dbType" : "MySQL",
+  "host" : "11.111.11.111",
+  "dbName" : "SalesVision",
+  "port" : "8030",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "BADGES",
+    "schema" : null
+  }, {
+    "table" : "CHANNELS",
+    "schema" : null
+  }, {
+    "table" : "CUSTOMERS",
+    "schema" : null
+  }, {
+    "table" : "FOLLOW_UPS",
+    "schema" : null
+  }, {
+    "table" : "LEADS",
+    "schema" : null
+  }, {
+    "table" : "PRODUCTS",
+    "schema" : null
+  }, {
+    "table" : "QUOTE_STATUS",
+    "schema" : null
+  }, {
+    "table" : "QUOTES",
+    "schema" : null
+  }, {
+    "table" : "REPS",
+    "schema" : null
+  }, {
+    "table" : "REWARDS",
+    "schema" : null
+  }, {
+    "table" : "SALES",
+    "schema" : null
+  }, {
+    "table" : "STATES",
+    "schema" : null
+  }, {
+    "table" : "TASK_PRIORITY",
+    "schema" : null
+  }, {
+    "table" : "TASKS",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : false,
+  "metadataDialect" : ""
+}

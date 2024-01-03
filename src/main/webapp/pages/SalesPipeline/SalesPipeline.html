@@ -1,0 +1,121 @@
+<wm-page name="mainpage" pagetitle="Main">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-content name="content">
+        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="mainContent" padding="16px">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow7">
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn11">
+                        <wm-label padding="unset" name="SalesPipelineslabel" caption="Sales Pipelines" class="app-label h1"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn12_2"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn1" padding="10px 10px 10px 16px">
+                        <wm-table name="salesPipelineTable" title="" dataset="bind:Variables.SalesVisionQuotesData.dataSet" navigation="Basic" gridclass="table-border" filtermode="search" showrecordcount="true" statehandler="none" class="app-grid app-panel panel" show="true"
+                            searchlabel="Search by customer Name" enablesort="false" navigationalign="right" height="654px">
+                            <wm-table-column binding="customers.name" caption="Customer" widget-type="undefined" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                            <wm-table-column binding="quoteStatus.quoteStatus" caption="Deal Stage" widget-type="label" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="true">
+                                <wm-label caption="bind:row.getProperty('quoteStatus.quoteStatus')" class="" conditionalclass="" conditionalstyle=""></wm-label>
+                            </wm-table-column>
+                            <wm-table-column binding="estimatedSale" caption="Deal Size" width="100px" primary-key="false" edit-widget-type="number" show="true" type="integer" generator="assigned" formatpattern="toCurrency" currencypattern="USD" readonly="false"></wm-table-column>
+                            <wm-table-column binding="expectedCloseDate" caption="Expected Date closed" width="160px" primary-key="false" edit-widget-type="date" show="true" type="date" generator="assigned" readonly="false"></wm-table-column>
+                            <wm-table-column binding="rowOperations" caption="Actions" width="20%" edit-widget-type="text" searchable="false" show="true" type="custom" readonly="true" sortable="false"></wm-table-column>
+                            <wm-table-row-action key="customRow" display-name="Convert" show="true" class="btn-success-border" iconclass="" title="Custom rowActions" action="Widgets.createSales.open()" accessroles="user" disabled="false" widget-type="button"></wm-table-row-action>
+                        </wm-table>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn2" padding="10px 16px 10px 10px">
+                        <wm-panel iconclass="" autoclose="outsideClick" title="Calendar" name="Calanderpanel" height="694px">
+                            <wm-calendar name="calendar" view="month" controls="navigation" selectionmode="single" dataset="bind:Variables.getTasks.dataSet" calendartype="basic" show="true" eventstart="duedate" width="100%" height="350px"></wm-calendar>
+                            <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list no-shadow list-accordian" name="TasksList" dataset="bind:Widgets.calendar.selecteddata" navigation="Scroll" paginationclass="btn-default"
+                                title="Tasks" disableitem="false" statehandler="none" height="274px" pagesize="10">
+                                <wm-listtemplate layout="inline" name="listtemplate1">
+                                    <wm-container class="media-body" name="container3">
+                                        <wm-label name="taskPriority" caption="bind:Widgets.calendar.selecteddata[$i].taskPriority.taskPriority" class="pull-right" margin="0px unset"></wm-label>
+                                        <wm-label caption="bind:Widgets.calendar.selecteddata[$i].duedate | toDate: 'yyyy, MMM dd'" margin="0px unset" name="taskDueDate"></wm-label>
+                                    </wm-container>
+                                    <wm-container name="container9" class="col-xs-12 expand-content" padding="0.5em unset unset unset" bordercolor="rgba(158, 165, 189, 0.3)" borderstyle="solid" borderwidth="1px 0px 0px 0px">
+                                        <wm-label name="taskContent" caption="bind:&quot;Notes: &quot;+Widgets.calendar.selecteddata[$i].description" margin="unset unset 0px unset" fontsize="11" color="#718096"></wm-label>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-list>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="false" title="Information" iconclass="wi wi-close" name="CongratsOnSales" showheader="false" closable="true" class="modal-sm" on-close="Variables.SalesVisionQuotesData.listRecords()">
+        <wm-container name="container7" padding="32px 60px">
+            <wm-layoutgrid name="layoutgrid4_1" show="false">
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn10_1" padding="8% unset unset 3%">
+                        <wm-label name="congratulationsLable" caption="Congratulations!" fontsize="40" class="text-primary"></wm-label>
+                        <wm-label name="successfullyConvertedMessage" caption="bind:Widgets.salesPipelineTable.selecteditem.customers.name+&quot; was Successfully  converted into a client&quot;" color="#333d5f" fontsize="20"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn11_1" horizontalalign="center">
+                        <wm-picture name="congratulationPicture" picturesource="resources/images/imagelists/Congrats_Icon.png"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-layoutgrid name="layoutgrid5_1">
+                <wm-gridrow name="gridrow8_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn13" horizontalalign="center">
+                        <wm-picture resizemode="cover" name="congratulationPicture1" picturesource="resources/images/imagelists/Congratulations.png" pictureplaceholder="resources/images/imagelists/Congratulations.png" padding="unset 8px"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow9_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn15_1">
+                        <wm-container name="congratulationscontainer" horizontalalign="center">
+                            <wm-label caption="Congratulations!" class="h3 f3 app-label" name="label8" margin="20px unset 5px unset"></wm-label>
+                            <wm-label caption="bind:Widgets.salesPipelineTable.selecteditem.customers.name+&quot; was Successfully  converted into a client&quot;" name="successfullyConvertedMessage1" class="app-label font-regular" margin="unset unset 15px unset"></wm-label>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow10">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn17" horizontalalign="center" padding="1.5em 4em">
+                        <wm-button class="btn-success btn app-button" caption="Okay!" type="button" margin="unset" name="Cogratulations" padding="unset 80px" on-click="Widgets.salesPipelineTable.refreshData();Widgets.CongratsOnSales.close()"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" name="createSales" title="Create Sale" iconclass="" modal="true">
+        <wm-liveform errormessage="" title="" defaultmode="Edit" dataset="bind:Variables.SalesVisionSalesData.dataSet" captionalign="left" captionposition="top" name="CreateSalesLiveForm" on-success="Widgets.CongratsOnSales.open();Widgets.createSales.close();Variables.UpdateQuoteStatusConverted.invoke();Variables.SendEmail.invoke()"
+            on-beforeservicecall="CreateSalesLiveFormBeforeservicecall($event, $operation, $data, options)">
+            <wm-layoutgrid columns="2" name="layoutgrid5">
+                <wm-gridrow name="gridrow7_2">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn11_2">
+                        <wm-form-field name="quotes.customers.name" key="quotes.customers.name" displayname="Customers Name" show="true" type="string" widget="text" inputtype="text" placeholder="Enter value" defaultvalue="bind:Widgets.salesPipelineTable.selecteditem.customers.name"
+                            readonly="true" required="true"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn12_1">
+                        <wm-form-field name="sales" displayname="Deal Amount" show="true" primary-key="false" generator="assigned" key="sales" type="integer" readonly="false" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value" defaultvalue="bind:Widgets.salesPipelineTable.selecteditem.estimatedSale"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow8_1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn13">
+                        <wm-form-field name="entryDate" displayname="Closing Date" show="true" primary-key="false" generator="assigned" key="entryDate" type="date" readonly="false" required="true" widget="date" datepattern="MMM d, yyyy" placeholder="Select date" outputformat="yyyy-MM-dd"
+                            defaultvalue="CURRENT_DATE" showdropdownon="default" dataentrymode="default"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn14">
+                        <wm-form-field name="renewalPeriod" displayname="Renewal Days" show="true" primary-key="false" generator="assigned" key="renewalPeriod" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow9">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                        <wm-form-field name="comments" displayname="Comments" show="true" primary-key="false" generator="assigned" key="comments" type="string" readonly="false" widget="textarea" maxchars="555" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="quotes" displayname="Quotes" show="false" primary-key="false" generator="assigned" key="quotes" type="list" is-related="true" readonly="false" required="false" widget="select" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                placeholder="Select value"></wm-form-field>
+            <wm-form-field name="isRenewal" displayname="Is Renewal" show="false" primary-key="false" generator="assigned" key="isRenewal" type="boolean" readonly="false" required="false" widget="checkbox" placeholder="" defaultvalue="bind:Widgets.CreateSalesLiveForm.formWidgets.renewalPeriod.datavalue? true:false"></wm-form-field>
+            <wm-form-field name="productId" key="productId" displayname="Product" show="false" type="string" widget="text" inputtype="text" placeholder="Enter value"></wm-form-field>
+            <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+            <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-default" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+</wm-page>

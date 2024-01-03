@@ -1,0 +1,398 @@
+{
+  "getDealStatus" : {
+    "name" : "getDealStatus",
+    "description" : "getting the deal status based on managerId and dates",
+    "version" : "V2",
+    "queryString" : "select qs.QUOTE_STATUS,SUM(q.ESTIMATED_SALE) as size,count(q.id) as volume from QUOTES q join REPS r on q.REP_ID = r.ID join QUOTE_STATUS qs on q.QUOTE_STATUS_REF=qs.ID where r.REPORTING_HEAD=:reportingHead and q.ENTRY_DATE between :fromDate and :toDate group by qs.QUOTE_STATUS",
+    "countQueryString" : "select count(*) from (select qs.QUOTE_STATUS,SUM(q.ESTIMATED_SALE) as size,count(q.id) as volume from QUOTES q join REPS r on q.REP_ID = r.ID join QUOTE_STATUS qs on q.QUOTE_STATUS_REF=qs.ID where r.REPORTING_HEAD=:reportingHead and q.ENTRY_DATE between :fromDate and :toDate group by qs.QUOTE_STATUS) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "reportingHead",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "31",
+      "required" : true
+    }, {
+      "name" : "fromDate",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2019-01-01",
+      "required" : true
+    }, {
+      "name" : "toDate",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2020-12-01",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.salesvision.salesvision.models.query.GetDealStatusResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "QUOTE_STATUS",
+        "fieldName" : "quoteStatus",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "size",
+        "fieldName" : "size",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "volume",
+        "fieldName" : "volume",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getExistingCustomers" : {
+    "name" : "getExistingCustomers",
+    "description" : "getExistingCustomers",
+    "version" : "V2",
+    "queryString" : "select c.NAME, c.COMPANY, s.SALES FROM QUOTES q inner join CUSTOMERS c on c.ID = q.CUSTOMER_ID inner join SALES s on s.QUOTE_ID = q.ID where q.REP_ID = :repid and q.QUOTE_STATUS_REF = 6",
+    "countQueryString" : "select count(*) from (select c.NAME, c.COMPANY, s.SALES FROM QUOTES q inner join CUSTOMERS c on c.ID = q.CUSTOMER_ID inner join SALES s on s.QUOTE_ID = q.ID where q.REP_ID = :repid and q.QUOTE_STATUS_REF = 6) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "repid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.salesvision.salesvision.models.query.GetExistingCustomersResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "NAME",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "COMPANY",
+        "fieldName" : "company",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SALES",
+        "fieldName" : "sales",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getRepsCount" : {
+    "name" : "getRepsCount",
+    "description" : "getRepsCount",
+    "version" : "V2",
+    "queryString" : "select count(*) from REPS where REPORTING_HEAD=:head",
+    "countQueryString" : "select count(*) from (select count(*) from REPS where REPORTING_HEAD=:head) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "head",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "9",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.salesvision.salesvision.models.query.GetRepsCountResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "count(*)",
+        "fieldName" : "count___",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getSalesSum" : {
+    "name" : "getSalesSum",
+    "description" : "Return sales sum of given manager or reps",
+    "version" : "V2",
+    "queryString" : "select case when sum(s.SALES) is null then 0 else sum(s.SALES) end as salesSum, count(distinct r.ID) as repCount from SALES s join QUOTES q on s.QUOTE_ID = q.ID join REPS r on q.REP_ID = r.ID where s.ENTRY_DATE between :fromDate and :toDate and (r.REPORTING_HEAD = :reportingHead or r.ID = :repID)",
+    "countQueryString" : "select count(*) from (select case when sum(s.SALES) is null then 0 else sum(s.SALES) end as salesSum, count(distinct r.ID) as repCount from SALES s join QUOTES q on s.QUOTE_ID = q.ID join REPS r on q.REP_ID = r.ID where s.ENTRY_DATE between :fromDate and :toDate and (r.REPORTING_HEAD = :reportingHead or r.ID = :repID)) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "fromDate",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2020-01-12",
+      "required" : true
+    }, {
+      "name" : "toDate",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2020-02-12",
+      "required" : true
+    }, {
+      "name" : "reportingHead",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false
+    }, {
+      "name" : "repID",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "3",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.salesvision.salesvision.models.query.GetSalesSumResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "salesSum",
+        "fieldName" : "salesSum",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "repCount",
+        "fieldName" : "repCount",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getTopPerformers" : {
+    "name" : "getTopPerformers",
+    "description" : "Returns the top performers under the given headID",
+    "version" : "V2",
+    "queryString" : "select r.NAME,ceil((SUM(s.SALES)*100)/:target) as percent from SALES s join QUOTES q on s.QUOTE_ID = q.ID join REPS r on q.REP_ID = r.ID where r.REPORTING_HEAD=:reportingHeadId and s.ENTRY_DATE between :fromDate and :toDate group by r.ID",
+    "countQueryString" : "select count(*) from (select r.NAME,ceil((SUM(s.SALES)*100)/:target) as percent from SALES s join QUOTES q on s.QUOTE_ID = q.ID join REPS r on q.REP_ID = r.ID where r.REPORTING_HEAD=:reportingHeadId and s.ENTRY_DATE between :fromDate and :toDate group by r.ID) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "target",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "25000",
+      "required" : true
+    }, {
+      "name" : "reportingHeadId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "31",
+      "required" : true
+    }, {
+      "name" : "fromDate",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2019-01-01",
+      "required" : true
+    }, {
+      "name" : "toDate",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2020-12-01",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.salesvision.salesvision.models.query.GetTopPerformersResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "NAME",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "percent",
+        "fieldName" : "percent",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigDecimal",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getTopSellingSales" : {
+    "name" : "getTopSellingSales",
+    "description" : "Return sum of sales respective to products",
+    "version" : "V2",
+    "queryString" : "select p.NAME,sum(s.SALES) as sales from SALES s join PRODUCTS p on s.PRODUCT_ID = p.ID group by p.ID order by sales desc",
+    "countQueryString" : "select count(*) from (select p.NAME,sum(s.SALES) as sales from SALES s join PRODUCTS p on s.PRODUCT_ID = p.ID group by p.ID order by sales desc) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.salesvision.salesvision.models.query.GetTopSellingSalesResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "NAME",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "sales",
+        "fieldName" : "sales",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "updateQuoteStatusConverted" : {
+    "name" : "updateQuoteStatusConverted",
+    "description" : "Update quote status to converted",
+    "version" : "V2",
+    "queryString" : "update QUOTES set QUOTE_STATUS_REF=6 where ID = :quoteId",
+    "countQueryString" : null,
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "quoteId",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "6778",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.salesvision.salesvision.models.query.UpdateQuoteStatusConvertedRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  }
+}

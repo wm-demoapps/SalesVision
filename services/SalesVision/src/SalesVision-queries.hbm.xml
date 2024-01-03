@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="getDealStatus">
+        <![CDATA[
+        select qs.QUOTE_STATUS,SUM(q.ESTIMATED_SALE) as size,count(q.id) as volume from QUOTES q join REPS r on q.REP_ID = r.ID join QUOTE_STATUS qs on q.QUOTE_STATUS_REF=qs.ID where r.REPORTING_HEAD=:reportingHead and q.ENTRY_DATE between :fromDate and :toDate group by qs.QUOTE_STATUS
+        ]]>
+    <query-param name="reportingHead" type="java.lang.String"/>
+    <query-param name="fromDate" type="java.lang.String"/>
+    <query-param name="toDate" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getDealStatus__count">
+        <![CDATA[
+        select count(*) from (select qs.QUOTE_STATUS,SUM(q.ESTIMATED_SALE) as size,count(q.id) as volume from QUOTES q join REPS r on q.REP_ID = r.ID join QUOTE_STATUS qs on q.QUOTE_STATUS_REF=qs.ID where r.REPORTING_HEAD=:reportingHead and q.ENTRY_DATE between :fromDate and :toDate group by qs.QUOTE_STATUS) wmTempTable
+        ]]>
+    <query-param name="reportingHead" type="java.lang.String"/>
+    <query-param name="fromDate" type="java.lang.String"/>
+    <query-param name="toDate" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getExistingCustomers">
+        <![CDATA[
+        select c.NAME, c.COMPANY, s.SALES FROM QUOTES q inner join CUSTOMERS c on c.ID = q.CUSTOMER_ID inner join SALES s on s.QUOTE_ID = q.ID where q.REP_ID = :repid and q.QUOTE_STATUS_REF = 6
+        ]]>
+    <query-param name="repid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getExistingCustomers__count">
+        <![CDATA[
+        select count(*) from (select c.NAME, c.COMPANY, s.SALES FROM QUOTES q inner join CUSTOMERS c on c.ID = q.CUSTOMER_ID inner join SALES s on s.QUOTE_ID = q.ID where q.REP_ID = :repid and q.QUOTE_STATUS_REF = 6) wmTempTable
+        ]]>
+    <query-param name="repid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updateQuoteStatusConverted">
+        <![CDATA[
+        update QUOTES set QUOTE_STATUS_REF=6 where ID = :quoteId
+        ]]>
+    <query-param name="quoteId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getRepsCount">
+        <![CDATA[
+        select count(*) from REPS where REPORTING_HEAD=:head
+        ]]>
+    <query-param name="head" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRepsCount__count">
+        <![CDATA[
+        select count(*) from (select count(*) from REPS where REPORTING_HEAD=:head) wmTempTable
+        ]]>
+    <query-param name="head" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getSalesSum">
+        <![CDATA[
+        select case when sum(s.SALES) is null then 0 else sum(s.SALES) end as salesSum, count(distinct r.ID) as repCount from SALES s join QUOTES q on s.QUOTE_ID = q.ID join REPS r on q.REP_ID = r.ID where s.ENTRY_DATE between :fromDate and :toDate and (r.REPORTING_HEAD = :reportingHead or r.ID = :repID)
+        ]]>
+    <query-param name="fromDate" type="java.lang.String"/>
+    <query-param name="toDate" type="java.lang.String"/>
+    <query-param name="reportingHead" type="java.lang.String"/>
+    <query-param name="repID" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getSalesSum__count">
+        <![CDATA[
+        select count(*) from (select case when sum(s.SALES) is null then 0 else sum(s.SALES) end as salesSum, count(distinct r.ID) as repCount from SALES s join QUOTES q on s.QUOTE_ID = q.ID join REPS r on q.REP_ID = r.ID where s.ENTRY_DATE between :fromDate and :toDate and (r.REPORTING_HEAD = :reportingHead or r.ID = :repID)) wmTempTable
+        ]]>
+    <query-param name="fromDate" type="java.lang.String"/>
+    <query-param name="toDate" type="java.lang.String"/>
+    <query-param name="reportingHead" type="java.lang.String"/>
+    <query-param name="repID" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getTopPerformers">
+        <![CDATA[
+        select r.NAME,ceil((SUM(s.SALES)*100)/:target) as percent from SALES s join QUOTES q on s.QUOTE_ID = q.ID join REPS r on q.REP_ID = r.ID where r.REPORTING_HEAD=:reportingHeadId and s.ENTRY_DATE between :fromDate and :toDate group by r.ID
+        ]]>
+    <query-param name="target" type="java.lang.String"/>
+    <query-param name="reportingHeadId" type="java.lang.String"/>
+    <query-param name="fromDate" type="java.lang.String"/>
+    <query-param name="toDate" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getTopPerformers__count">
+        <![CDATA[
+        select count(*) from (select r.NAME,ceil((SUM(s.SALES)*100)/:target) as percent from SALES s join QUOTES q on s.QUOTE_ID = q.ID join REPS r on q.REP_ID = r.ID where r.REPORTING_HEAD=:reportingHeadId and s.ENTRY_DATE between :fromDate and :toDate group by r.ID) wmTempTable
+        ]]>
+    <query-param name="target" type="java.lang.String"/>
+    <query-param name="reportingHeadId" type="java.lang.String"/>
+    <query-param name="fromDate" type="java.lang.String"/>
+    <query-param name="toDate" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getTopSellingSales">
+        <![CDATA[
+        select p.NAME,sum(s.SALES) as sales from SALES s join PRODUCTS p on s.PRODUCT_ID = p.ID group by p.ID order by sales desc
+        ]]>
+    </sql-query>
+
+    <sql-query name="getTopSellingSales__count">
+        <![CDATA[
+        select count(*) from (select p.NAME,sum(s.SALES) as sales from SALES s join PRODUCTS p on s.PRODUCT_ID = p.ID group by p.ID order by sales desc) wmTempTable
+        ]]>
+    </sql-query>
+</hibernate-mapping>

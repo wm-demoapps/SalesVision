@@ -1,0 +1,5 @@
+Hi there,
+<br/><br/>
+Sales Rep <b>@rep@</b> has submitted a request to convert a sales lead for <b>@client@</b>.
+<br/><br/>
+Please review this activity.

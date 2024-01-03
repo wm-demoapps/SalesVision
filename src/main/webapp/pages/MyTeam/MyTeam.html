@@ -1,0 +1,192 @@
+<wm-page pagetitle="Manager Profile" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid16">
+                <wm-gridrow name="gridrow26">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn51">
+                        <wm-label padding="unset" caption="My Team" class="app-label h1" name="Teamview1"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn52"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow27">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn53" padding="10px 10px 10px 16px">
+                        <wm-tile width="100%" backgroundcolor="#fff" name="totalRepsTile">
+                            <wm-layoutgrid height="100%" name="layoutgrid26">
+                                <wm-gridrow height="100%" name="gridrow43">
+                                    <wm-gridcolumn columnwidth="9" horizontalalign="left" name="gridcolumn87">
+                                        <wm-label caption="Total Representatives" class="p app-label h4" fontunit="px" name="totalRepsTitle"></wm-label>
+                                        <wm-label caption="bind:Variables.GetRepsCount.dataSet[$i].count___" fontunit="px" class="app-label h1" name="totalRepsValue"></wm-label>
+                                        <wm-label padding="unset" caption="Representatives" class="p app-label f2 label-text" name="Repstile"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" class="app-grid-column  text-center" name="gridcolumn88">
+                                        <wm-icon class="app-icon-wrapper  tile-icon" name="icon6" iconclass="sv-reps"></wm-icon>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn54" padding="10px">
+                        <wm-tile width="100%" backgroundcolor="#fff" name="totalLeadsTile">
+                            <wm-layoutgrid height="100%" name="layoutgrid27">
+                                <wm-gridrow height="100%" name="gridrow44">
+                                    <wm-gridcolumn columnwidth="9" horizontalalign="left" name="gridcolumn89">
+                                        <wm-label caption="Total Leads" class="p app-label h4" fontunit="px" name="totalLeadsTitle"></wm-label>
+                                        <wm-label caption="bind:Variables.getLeadsCount.dataSet.dataValue" fontunit="px" class="app-label h1" name="totalLeadsValue"></wm-label>
+                                        <wm-label padding="unset" caption="Leads" class="p app-label f2 label-text" name="Leadestile"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" class="app-grid-column  text-center" name="gridcolumn90">
+                                        <wm-icon iconclass="sv-graph-up" class="app-icon-wrapper tile-icon" name="totalLeadsIcon"></wm-icon>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn83" padding="10px 16px 10px 10px">
+                        <wm-tile width="100%" backgroundcolor="#fff" name="totalTeamAwardsTile">
+                            <wm-layoutgrid height="100%" name="layoutgrid28">
+                                <wm-gridrow height="100%" name="gridrow45">
+                                    <wm-gridcolumn columnwidth="9" horizontalalign="left" name="gridcolumn91">
+                                        <wm-label caption="Total Team Awards" class="p app-label h4" fontunit="px" name="totalTeamAwardsTitle"></wm-label>
+                                        <wm-label caption="26" fontunit="px" class="p app-label h1" name="totalTeamAwardsValue"></wm-label>
+                                        <wm-label padding="unset" caption="Team Awards" class="p app-label f2 label-text" name="Awardstile"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" class="app-grid-column  text-center" name="gridcolumn92">
+                                        <wm-icon iconclass="sv-awards" class="app-icon-wrapper tile-icon" name="totalTeamAwardsIcon"></wm-icon>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow42">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn84" padding="10px 16px">
+                        <wm-panel iconclass="" autoclose="outsideClick" title="Team" name="panel9" show="true">
+                            <wm-layoutgrid name="layoutgrid29">
+                                <wm-gridrow name="gridrow46">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn93">
+                                        <wm-container margin="unset unset 4px unset" padding="unset 12px" show="true" name="container17">
+                                            <wm-search searchon="typing" placeholder="Search by Employee name" name="search_employee"></wm-search>
+                                        </wm-container>
+                                        <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="list-card only-cards" dataset="bind:Variables.GetReps.dataSet" navigation="None" selectfirstitem="true" showindevice="all" statehandler="none" direction="vertical"
+                                            show="true" showrecordcount="true" enablereorder="false" name="RepsList1" height="485px">
+                                            <wm-listtemplate layout="media" name="listtemplate2">
+                                                <wm-card name="repsCards" imageheight="200px">
+                                                    <wm-card-content fontsize="0.8" fontunit="em" name="reps_card_content">
+                                                        <wm-layoutgrid columns="2" name="layoutgrid30">
+                                                            <wm-gridrow name="gridrow48">
+                                                                <wm-gridcolumn colwidth="6" columnwidth="3" horizontalalign="center" name="gridcolumn97">
+                                                                    <wm-picture width="55px" picturesource="bind:Variables.GetReps.dataSet[$i].picurl" height="55px" shape="rounded" backgroundcolor="#fff" bordercolor="#f5f5f5" borderstyle="solid" borderwidth="1px" name="repsPicture"></wm-picture>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn colwidth="6" columnwidth="9" padding="unset unset unset 1.25em" class="inline-grid" name="gridcolumn98">
+                                                                    <wm-label caption="bind:Variables.GetReps.dataSet[$i].name" class="p app-label h3 text-dark" margin="4px unset unset unset" name="repsName"></wm-label>
+                                                                    <wm-container name="container13" class="app-container flex-inline" display="inline-flex">
+                                                                        <wm-icon name="icon12" class="app-icon-wrapper icon-pin" iconclass="sv-locationpin"></wm-icon>
+                                                                        <wm-label caption="bind:Variables.GetReps.dataSet[$i].street + &quot; , &quot;+ Variables.GetReps.dataSet[$i].state" class="app-label h6 text-dark" margin="0px unset 0px 4px" whitespace="nowrap" name="replocation"></wm-label>
+                                                                    </wm-container>
+                                                                    <wm-anchor class="p text-muted" hyperlink="mailto://" caption="" whitespace="nowrap" name="anchor4"></wm-anchor>
+                                                                    <wm-container name="container14" class="app-container flex-inline h6 text-regular" margin="24px unset 0px unset">
+                                                                        <wm-label padding="unset 12px unset unset" name="Phonenumberlabel" caption="Phone No:" class="app-label" margin="unset unset 0px unset"></wm-label>
+                                                                        <wm-label padding="unset" name="PhoneNumber" caption="bind:Variables.GetReps.dataSet[$i].phone" class="app-label" margin="unset unset 0px unset"></wm-label>
+                                                                    </wm-container>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                        </wm-layoutgrid>
+                                                    </wm-card-content>
+                                                </wm-card>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="8" name="gridcolumn94">
+                                        <wm-container class="container-box" name="container18">
+                                            <wm-layoutgrid name="layoutgrid31">
+                                                <wm-gridrow padding="unset unset 1.6em unset" name="gridrow49">
+                                                    <wm-gridcolumn columnwidth="3" horizontalalign="center" padding="unset 12px unset unset" name="gridcolumn99">
+                                                        <wm-picture width="120px" height="120px" shape="rounded" picturesource="bind:Widgets.RepsList1.selecteditem.picurl" backgroundcolor="#fff" bordercolor="#f5f5f5" borderstyle="solid" borderwidth="1px" name="picture8"></wm-picture>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="7" padding="unset unset unset 12px" name="gridcolumn100">
+                                                        <wm-label class="p app-label h2" caption="bind:Widgets.RepsList1.selecteditem.name" margin="0px unset" name="repDetailsName"></wm-label>
+                                                        <wm-layoutgrid name="layoutgrid32">
+                                                            <wm-gridrow name="gridrow28" padding="4px unset 18px unset" class="app-grid-row clearfix flex-inline">
+                                                                <wm-gridcolumn columnwidth="5" name="gridcolumn56">
+                                                                    <wm-label class="app-label text-primary font-Medium h4" caption="bind:Widgets.RepsList1.selecteditem.channels.name" margin="0px unset" padding="unset 8px unset unset" name="repDetailsDeptname"></wm-label>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn columnwidth="7" name="gridcolumn57">
+                                                                    <wm-container name="container17_1" class="app-container flex-inline">
+                                                                        <wm-icon name="LocationIcon" iconclass="sv-locationpin" class="app-icon-wrapper icon-pin"></wm-icon>
+                                                                        <wm-label padding="unset unset unset 4px" caption="bind:Variables.GetReps.dataSet[$i].street + &quot;,&quot;  + Variables.GetReps.dataSet[$i].state" margin="unset unset 0px unset" class="app-label text-primary" name="locationValue"></wm-label>
+                                                                    </wm-container>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                            <wm-gridrow name="gridrow50">
+                                                                <wm-gridcolumn columnwidth="3" name="gridcolumn101">
+                                                                    <wm-label caption="Phone No :" name="phoneLable" class="app-label h6 text-regular font-Medium" margin="unset unset 0px unset"></wm-label>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn columnwidth="9" name="gridcolumn102">
+                                                                    <wm-label caption="bind:Widgets.RepsList1.selecteditem.phone" name="phoneValue" class="app-label h6 text-regular font-regular" margin="unset unset 0px unset"></wm-label>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                            <wm-gridrow name="gridrow51">
+                                                                <wm-gridcolumn columnwidth="3" name="gridcolumn103">
+                                                                    <wm-label caption="Email :" name="emailLable" class="app-label text-regular h6 font-Medium" margin="unset unset 0px unset"></wm-label>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn columnwidth="9" name="gridcolumn104">
+                                                                    <wm-label caption="bind:Widgets.RepsList1.selecteditem.email" name="EmailValue" class="app-label h6 text-regular font-regular" margin="unset unset 0px unset"></wm-label>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                        </wm-layoutgrid>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn107">
+                                                        <wm-container class="media-top app-container" name="container19_1" horizontalalign="right">
+                                                            <wm-button class="btn-transparent btn app-button" caption="" type="button" margin="unset" name="button4" iconclass="sv-Save"></wm-button>
+                                                            <wm-button type="button" class="btn-transparent" iconclass="sv-share" name="button2"></wm-button>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow54">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn110">
+                                                        <wm-panel iconclass="" autoclose="outsideClick" title="Yours Goals" name="panel_goals" class="app-panel panel left-panel">
+                                                            <wm-progress-circle width="200px" height="200px" type="success" subtitle="Achieved" title="" captionplacement="inside" class="center-block" datavalue="bind:(Variables.QVGetSalesSum.dataSet.salesSum*100)/(Variables.weeklySalesTarget.dataSet.dataValue*4*Variables.QVGetSalesSum.dataSet.repCount)"
+                                                                margin="2.3em unset 2.5em unset" name="progress_circle_goals"></wm-progress-circle>
+                                                            <wm-container horizontalalign="center" class="progess-ledgers" display="inline-flex" name="container19" margin="unset unset 6px unset">
+                                                                <wm-container display="inline-flex" class="col-xs-6 app-container  flex-inline" horizontalalign="left" name="container20">
+                                                                    <wm-icon iconclass="wi wi-lens" color="#E4F8B0" class="pull-left app-icon-wrapper " name="salesTargetIcon"></wm-icon>
+                                                                    <wm-container name="container16" padding="unset unset unset 18px">
+                                                                        <wm-label caption="Sales Target" whitespace="nowrap" margin="unset unset 0px unset" name="salesTargetLable" class="app-label f1 font-semibold text-black"></wm-label>
+                                                                        <wm-label margin="unset unset 0px unset" caption="bind:Variables.weeklySalesTarget.dataSet.dataValue*4 | toCurrency: '$'" textalign="right" name="salesTargetValue" class="app-label"></wm-label>
+                                                                    </wm-container>
+                                                                </wm-container>
+                                                                <wm-container display="inline-flex" class="col-xs-6 app-container flex-inline" horizontalalign="left" padding="unset unset unset 1em" name="container21">
+                                                                    <wm-icon iconclass="wi wi-lens" class="pull-left text-success" name="targetAchievedIcon"></wm-icon>
+                                                                    <wm-container name="container17_2" class="app-container" padding="unset unset unset 18px">
+                                                                        <wm-label caption="Achieved" margin="unset unset 0px unset" name="targetAchivedLable" class="app-label f1 font-semibold text-black"></wm-label>
+                                                                        <wm-label class="p" margin="unset unset 0px unset" caption="bind:Variables.QVGetSalesSum.dataSet.salesSum | toCurrency: '$'" textalign="left" name="targetAchivedValue"></wm-label>
+                                                                    </wm-container>
+                                                                </wm-container>
+                                                            </wm-container>
+                                                        </wm-panel>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn111">
+                                                        <wm-panel iconclass="" autoclose="outsideClick" title="Location" height="auto" name="panel3" class="app-panel panel right-panel">
+                                                            <wm-prefab prefabname="googlemaps" locations="bind:Widgets.RepsList1.selecteditem" markertype="Address" address="city" name="googlemaps1" height="300px"></wm-prefab>
+                                                        </wm-panel>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow47">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn95"></wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="8" name="gridcolumn96"></wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

@@ -1,0 +1,12 @@
+<wm-partial type="popover" name="partial1">
+    <wm-container name="container1" padding="12px">
+        <wm-nav type="pills" autoclose="outsideClick" name="nav1" layout="stacked">
+            <wm-nav-item name="nav_item1">
+                <wm-anchor caption="My Profile" name="anchor1" iconclass="sv-user fa-lg" on-click="Actions.goToPage_MyProfile.invoke()"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item2">
+                <wm-anchor caption="Logout" name="anchor2" iconclass="sv-logout fa-lg" on-click="Actions.logoutAction.invoke()"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+    </wm-container>
+</wm-partial>

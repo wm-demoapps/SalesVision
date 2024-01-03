@@ -1,0 +1,38 @@
+{
+  "endpointAddress" : "https://ap16.salesforce.com/services/data/v39.0/query/",
+  "method" : "GET",
+  "headers" : {
+    "Content-Type" : [ "application/json" ],
+    "Authorization" : [ "Bearer 00D2w000002jeS1!ARMAQNG4_lbpq4qzlVFC.oPjxaClysnR5VewZVgvk.6EJ.mfXp_OSwtawGAJj8G2w3am.Dw2aASNJIWqIWikAOUqILL_tDM2" ]
+  },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : {
+    "q" : "SELECT+NAME,Company,Phone,Email,City,State+from+LEAD"
+  },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Expect-CT" : [ "max-age=86400, report-uri=\"https://a.forcesslreports.com/Expect-CT-report/nullm\"" ],
+      "Public-Key-Pins-Report-Only" : [ "pin-sha256=\"9n0izTnSRF+W4W4JTq51avSXkWhQB8duS2bxVLfzXsY=\"; pin-sha256=\"5kJvNEMw0KjrCAu7eXY5HZdvyCS13BbA0VJG1RSP91w=\"; pin-sha256=\"njN4rRG+22dNXAi+yb8e3UMypgzPUPHlv4+foULwl1g=\"; max-age=86400; includeSubDomains; report-uri=\"https://a.forcesslreports.com/hpkp-report/nullm\";" ],
+      "Referrer-Policy" : [ "origin-when-cross-origin" ],
+      "Expires" : [ "Thu, 01 Jan 1970 00:00:00 GMT" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "X-Robots-Tag" : [ "none" ],
+      "Sforce-Limit-Info" : [ "api-usage=22/15000" ],
+      "Strict-Transport-Security" : [ "max-age=31536000; includeSubDomains" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Date" : [ "Thu, 13 Feb 2020 10:29:53 GMT" ],
+      "Cache-Control" : [ "no-cache,must-revalidate,max-age=0,no-store,private" ],
+      "Vary" : [ "Accept-Encoding" ],
+      "Set-Cookie" : [ "BrowserId=xXMazE5LEeqRf61-Wu6lyQ;Path=/;Domain=.salesforce.com;Expires=Mon, 13-Apr-2020 10:29:53 GMT;Max-Age=5184000" ]
+    },
+    "responseBody" : "{\"totalSize\":33,\"done\":true,\"records\":[{\"attributes\":{\"type\":\"Lead\",\"url\":\"/services/data/v39.0/sobjects/Lead/00Q2w000001CmgMEAS\"},\"Name\":\"Sally Jones\",\"Company\":\"Company M\",\"Phone\":null,\"Email\":null,\"City\":null,\"State\":null}]}",
+    "convertedResponse" : null
+  }
+}

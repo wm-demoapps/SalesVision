@@ -1,0 +1,13 @@
+[ {
+  "name" : "user",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Dashboard"
+  }
+}, {
+  "name" : "manager",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Dashboard"
+  }
+} ]

@@ -1,0 +1,25 @@
+<wm-partial name="header" type="header">
+    <wm-layoutgrid name="headerlayout">
+        <wm-gridrow name="headerrow">
+            <wm-gridcolumn columnwidth="2" name="gridcolumn3" horizontalalign="left" class="app-grid-column header-color">
+                <wm-picture name="salesVisionLogo" picturesource="resources/images/imagelists/SalesVisionLogo.png" pictureplaceholder="resources/images/imagelists/SalesVisionLogo.png"></wm-picture>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="4" name="gridcolumn3_1" padding="15px unset 15px 32px" class="app-grid-column flex-inline">
+                <wm-container name="container3_1" class="app-container flex-center">
+                    <wm-label name="WelcomeLabel" caption="bind:&quot;Welcome!&quot; + &quot; &quot; + Variables.LoggedInUserREPS.firstRecord.name" class="app-label header-label2"></wm-label>
+                    <wm-icon name="ShakeHandIcon" iconclass="sv-wave fa-lg"></wm-icon>
+                </wm-container>
+            </wm-gridcolumn>
+            <wm-gridcolumn name="headerright" horizontalalign="right" verticalalign="middle" columnwidth="6" padding="15px 32px 15px unset">
+                <wm-container name="container1" display="inline-block" padding="0.5em 1em 0.5em unset" borderwidth="0px 1px 0px 0px" bordercolor="rgba(158, 165, 189, 0.3)" margin="unset 0.5em unset unset" borderstyle="solid" show="false">
+                    <wm-icon name="notificationsIcon" iconclass="wi wi-notifications fa-2x"></wm-icon>
+                </wm-container>
+                <wm-container name="container3" display="inline-flex" class="app-container flex-center" cursor="pointer">
+                    <wm-popover popoverwidth="150px" popoverheight="auto" margin="unset unset unset 0.5em" name="popover1" iconurl="bind:Variables.LoggedInUserREPS.firstRecord.picurl" iconheight="40px" iconwidth="40px" class="app-anchor app-popover-wrapper popover-avatar"
+                        caption="" content="popover_UserProfile"></wm-popover>
+                    <wm-label name="usernameLable" caption="bind:Variables.LoggedInUserREPS.firstRecord.name" showindevice="sm,md,lg" class="app-label header-label1"></wm-label>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

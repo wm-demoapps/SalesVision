@@ -1,0 +1,7 @@
+{
+  "id" : "convertQuotesToSales",
+  "type" : "JavaService",
+  "packageNames" : [ "com.salesvision.convertquotestosales" ],
+  "serviceClassNames" : [ "com.salesvision.convertquotestosales.ConvertQuotesToSales" ],
+  "title" : "convertQuotesToSales"
+}

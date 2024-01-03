@@ -1,0 +1,17 @@
+[ {
+  "name" : "NoUIRangeSlider",
+  "version" : "1.0.1",
+  "platformVersion" : null,
+  "publisherId" : "ent12666731518f",
+  "publisherName" : "retail",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "googlemaps",
+  "version" : "7.0.1",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+} ]
