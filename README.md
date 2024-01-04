@@ -42,7 +42,7 @@ The Sales Vision app is here to support Sales Representatives in a friendly and 
 
 # Note : 
 - Register with salesforce (ap16.salesforce.com) services to get pre-loaded leads data.
-- Database connection should be established.<a href="https://github.com/wm-demoapps/SalesVision/blob/main/SalesVision_db_bk._04_jan_2024.sql.sql" target="_blank">Click Here</a> to get DB script
+- Database connection should be established.<a href="https://github.com/wm-demoapps/SalesVision/blob/main/SalesVision_db_bk._04_jan_2024.sql" target="_blank">Click Here</a> to get DB script
 - Bind the password, client_secret, client_id, user name (You will get all these details upon registration on salesforce services) for the variable SalesForceLogin from DashBoards to get leads data.
 
 
